@@ -1,0 +1,10 @@
+---
+const { seconds } = Astro.props;
+---
+
+<div id="timer" data-seconds={seconds}>
+  <h2 id="display"></h2>
+  <button onclick="startTimer()">Start</button>
+</div>
+
+<script src="/scripts/timer.js"></script>

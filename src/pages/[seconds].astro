@@ -1,0 +1,24 @@
+---
+import Timer from '../components/Timer.astro';
+
+export async function getStaticPaths() {
+  return [
+    { params: { seconds: '60' } },
+    { params: { seconds: '300' } },
+    { params: { seconds: '600' } },
+    { params: { seconds: '900' } }
+  ];
+}
+
+const { seconds } = Astro.params;
+---
+
+<html>
+  <head>
+    <title>Countdown: {seconds} seconds</title>
+  </head>
+  <body>
+    <h1>Countdown: {seconds} seconds</h1>
+    <Timer seconds={Number(seconds)} />
+  </body>
+</html>
