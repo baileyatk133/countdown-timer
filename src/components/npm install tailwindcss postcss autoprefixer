@@ -1,0 +1,31 @@
+---
+const { seconds } = Astro.props;
+---
+
+<div class="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-50 to-gray-200">
+  <div class="w-full max-w-md bg-white shadow-xl rounded-2xl p-6 text-center">
+    <h1 class="text-2xl font-bold mb-6 text-gray-800">⏱ Countdown Timer</h1>
+
+    <div id="timer" data-seconds={seconds} class="mb-6">
+      <h2 id="display" class="text-6xl font-mono font-bold text-gray-900">00:00</h2>
+    </div>
+
+    <div class="flex justify-center gap-4 mb-6">
+      <button onclick="startTimer()" class="px-4 py-2 bg-blue-500 text-white rounded-xl shadow hover:bg-blue-600">▶ Start</button>
+      <button onclick="pauseTimer()" class="px-4 py-2 bg-yellow-500 text-white rounded-xl shadow hover:bg-yellow-600">⏸ Pause</button>
+      <button onclick="resetTimer()" class="px-4 py-2 bg-red-500 text-white rounded-xl shadow hover:bg-red-600">⟳ Reset</button>
+    </div>
+
+    <div class="flex justify-center gap-3 mb-6">
+      <a href="/300" class="px-3 py-1 bg-gray-100 rounded-lg hover:bg-gray-200">5 min</a>
+      <a href="/600" class="px-3 py-1 bg-gray-100 rounded-lg hover:bg-gray-200">10 min</a>
+      <a href="/900" class="px-3 py-1 bg-gray-100 rounded-lg hover:bg-gray-200">15 min</a>
+    </div>
+
+    <div class="text-sm text-gray-500">
+      Upgrade to <a href="/premium" class="text-blue-600 font-semibold hover:underline">Premium</a> for custom timers & themes.
+    </div>
+  </div>
+</div>
+
+<script src="/scripts/timer.js" is:inline></script>
